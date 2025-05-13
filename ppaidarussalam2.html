@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>PONDOK PESANTREN DARUSSALAM 02</title>
+  <!-- Bootstrap 4.5 CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <!-- Google Fonts for Islami look -->
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* General */
+    body {
+      font-family: 'Newsreader', sans-serif;
+      background-color: #f7faf9;
+      color: #1a4222;
+      scroll-behavior: smooth;
+    }
+    a, a:hover, a:focus {
+      text-decoration: none;
+      color: #064420;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #a68a3d;
+    }
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      color: #064420;
+    }
+    /* Navbar */
+    .navbar {
+      background-color: #e6f0e8;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .navbar-brand {
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: #064420 !important;
+    }
+    .navbar-nav .nav-link {
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      padding: 0.8rem 1rem;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #a68838 !important;
+      font-weight: 700;
+    }
+    /* Hero */
+    header.hero {
+      position: relative;
+      background: url('https://ibb.co/qLp5tVC4') no-repeat center center/cover;
+      height: 90vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #f0e6d2;
+    }
+    header.hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(6,68,32,0.65);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      padding: 0 15px;
+    }
+    .hero-content h1 {
+      font-size: 3.8rem;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.05em;
+    }
+    .hero-content .tagline {
+      font-size: 1.4rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+    .btn-primary {
+      background-color: #a68838;
+      border-color: #a68838;
+      font-size: 1.25rem;
+      font-weight: 700;
+      padding: 0.9rem 2.2rem;
+      box-shadow: 0 4px 10px rgba(166,136,56,0.7);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn-primary:hover, .btn-primary:focus {
+      background-color: #8a742e;
+      border-color: #8a742e;
+      box-shadow: 0 6px 14px rgba(138,116,46,0.8);
+    }
+    /* Section styles */
+    section {
+      padding: 4rem 0;
+    }
+    .container h2 {
+      border-bottom: 3px solid #a68838;
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    /* About Us */
+    #about p, #about ul {
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+    #about ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+    }
+    /* Programs */
+    #program ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    #program ul li {
+      background-color: #e6f0e8;
+      margin-bottom: 15px;
+      padding: 15px 25px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      box-shadow: 2px 2px 8px rgba(100,100,100,0.1);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    #program ul li:hover {
+      transform: translateY(-5px);
+      box-shadow: 2px 6px 15px rgba(166,136,56,0.4);
+      background-color: #d4dfd4;
+    }
+    /* Gallery */
+    #gallery .card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 7px 16px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      margin-bottom: 25px;
+    }
+    #gallery .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(166,136,56,0.6);
+    }
+    #gallery img {
+      border-radius: 12px;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* Contact */
+    #contact form {
+      max-width: 600px;
+      margin-top: 2rem;
+    }
+    #contact label {
+      font-weight: 600;
+    }
+    #contact .form-control {
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      font-size: 1rem;
+    }
+    #contact button {
+      background-color: #a68838;
+      border: none;
+      padding: 0.75rem 2rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+    #contact button:hover, #contact button:focus {
+      background-color: #8a742e;
+    }
+    /* Footer */
+    footer {
+      background-color: #064420;
+      color: #c2b280;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+    }
+    /* Responsive */
+    @media(max-width:767px) {
+      .hero-content h1 {
+        font-size: 2.6rem;
+      }
+      .hero-content .tagline {
+        font-size: 1.1rem;
+      }
+      .btn-primary {
+        font-size: 1rem;
+        padding: 0.7rem 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#home">PONDOK PESANTREN DARUSSALAM 02</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Tentang Kami</a></li>
+          <li class="nav-item"><a class="nav-link" href="#program">Program Pendidikan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Galeri</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="hero d-flex align-items-center justify-content-center">
+    <div class="hero-content">
+      <h1>PONDOK PESANTREN DARUSSALAM 02</h1>
+      <p class="tagline">Menumbuhkan Generasi Qur'ani yang Berakhlakul Karimah</p>
+      <a href="#contact" class="btn btn-primary">Daftar Sekarang</a>
+    </div>
+  </header>
+
+  <!-- About Us -->
+  <section id="about" class="pt-5">
+    <div class="container">
+      <h2>Tentang Kami</h2>
+      <p>
+        Pondok Pesantren Darussalam 02 berdiri sejak tahun 1993 dengan tujuan mendidik generasi muda yang berakhlakul karimah dan berpengetahuan agama secara mendalam.
+      </p>
+      <h4>Visi &amp; Misi</h4>
+      <ul>
+        <li><strong>Visi:</strong> Menjadi Madrasah Diniyah yang terdepan dalam membentuk generasi berakhlaq mulia, berwawasan, serta berpegang teguh pada ajaran Islam sesuai dengan Al-Qur'an dan Sunnah.</li>
+        <li><strong>Misi:</strong> Menumbuhkan rasa cinta kepada Allah SWT dan Rasulnya.</li>
+      </ul>
+      <h4>Informasi Lokasi</h4>
+      <p>Jl. Raya Belimbing, Dusun Kenongo RT 06 RW 02, Desa Sumbersuko, Kecamatan Wagir, Kabupaten Malang, Jawa Timur.</p>
+    </div>
+  </section>
+
+  <!-- Program Pendidikan -->
+  <section id="program" class="bg-light">
+    <div class="container">
+      <h2>Program Pendidikan</h2>
+      <ul>
+        <li>Madrasah Diniyah</li>
+        <li>Takmiliyah</li>
+        <li>Awaliyah</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <h2>Galeri</h2>
+      <div class="row">
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card shadow-sm">
+                <a href="https://ibb.co/qLp5tVC4" target="_blank" rel="noopener noreferrer" title="Pondok Pesantren">
+                  <img src="https://i.ibb.co/spqH0zCD/pondok.jpg" alt="pondok" class="img-fluid rounded" />
+                </a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card shadow-sm">
+            <a href="https://ibb.co/GQ3vC0Y3" target="_blank" rel="noopener noreferrer" title="Pondok Pesantren">
+                <img src="https://i.ibb.co/JjFRrK6F/foto-pondok-1.jpg" alt="foto-pondok-1" class="img-fluid rounded" />
+              </a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card shadow-sm">
+            <a href="https://ibb.co/nqXWcsdq" target="_blank" rel="noopener noreferrer" title="Asrama Pondok">
+                <img src="https://i.ibb.co/p6HmzvV6/asrama-pondok.jpg" alt="asrama-pondok" class="img-fluid rounded" />
+              </a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card shadow-sm">
+              <a href="https://ibb.co/gLn9kdfw" target="_blank" rel="noopener noreferrer" title="Musholla">
+                  <img src="https://i.ibb.co/pBmwYQMZ/musholla.jpg" alt="musholla" class="img-fluid rounded" />
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card shadow-sm">
+              <a href="https://ibb.co/67Y484Jf" target="_blank" rel="noopener noreferrer" title="Musholla">
+                  <img src="https://i.ibb.co/XrXzDzkv/musholla-2.jpg" alt="musholla-2" class="img-fluid rounded" />
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card shadow-sm">
+              <a href="https://ibb.co/zh2HHsQB" target="_blank" rel="noopener noreferrer" title="Ruang Belajar">
+                  <img src="https://i.ibb.co/N6NnnxtJ/ruang-belajar.jpg" alt="ruang-belajar" class="img-fluid rounded" />
+                </a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-light">
+    <div class="container">
+      <h2>Kontak</h2>
+      <p><strong>Alamat:</strong> Jl. Raya Belimbing, Dusun Kenongo RT 06 RW 02, Desa Sumbersuko, Kecamatan Wagir, Kabupaten Malang, Jawa Timur.</p>
+      <p><strong>Nomor HP/WhatsApp:</strong> +62 821 3154 7004</p>
+
+      <form id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="name">Nama</label>
+          <input type="text" class="form-control" id="name" placeholder="Masukkan nama Anda" required />
+          <div class="invalid-feedback">Nama wajib diisi.</div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Masukkan email Anda" required />
+          <div class="invalid-feedback">Email harus valid dan wajib diisi.</div>
+        </div>
+        <div class="form-group">
+          <label for="message">Pesan</label>
+          <textarea class="form-control" id="message" rows="4" placeholder="Tulis pesan Anda" required></textarea>
+          <div class="invalid-feedback">Pesan wajib diisi.</div>
+        </div>
+        <button type="submit" class="btn btn-success">Kirim Via Whatsapp</button>
+        <div id="formFeedback" class="mt-3"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; PONDOK PESANTREN DARUSSALAM 02 | All rights reserved.
+  </footer>
+
+  <!-- Bootstrap & JQuery JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Form validation and submission
+    function openWhatsApp(e) {
+    e.preventDefault();
+    const name = encodeURIComponent(document.getElementById('name').value.trim());
+    const email = encodeURIComponent(document.getElementById('email').value.trim());
+    const message = encodeURIComponent(document.getElementById('message').value.trim());
+    const waNumber = '6282131547004'; 
+    
+    const text = `Assalamu'alaikum, saya ingin menghubungi PPAI DARUSSALAM 02. Berikut data saya:%0ANama: ${name}%0AEmail: ${email}%0APesan: ${message}`;
+    const url = `https://wa.me/${waNumber}?text=${text}`;
+    window.open(url, '_blank');
+  }
+</script>
+</body>
+</html>
+
